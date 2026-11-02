@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Um quiz especial para Vitória, feito com carinho e boas memórias.">
+    <title>Quiz para Vitória 💞</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="memorias" aria-hidden="true">
+        <div class="foto foto-1"></div><div class="foto foto-2"></div>
+        <div class="foto foto-flor"></div><div class="foto foto-3"></div>
+        <div class="foto foto-4"></div><div class="foto foto-5"></div>
+    </div>
+    <main class="quiz">
+        <h1>Quiz para Vitória 💞</h1>
+        <section id="inicio" aria-labelledby="titulo-inicio">
+            <h2 class="etiqueta">Quanto você sabe sobre mim?</h2>
+
+            <button id="comecar" class="acao" type="button">Começar 💕</button>
+        </section>
+        <section id="jogo" aria-labelledby="pergunta" hidden>
+            <p id="progresso"></p>
+            <progress id="barra-progresso" value="0" max="10" aria-label="Perguntas respondidas"></progress>
+            <h2 id="pergunta" tabindex="-1"></h2>
+            <div id="respostas"></div>
+            <p id="resultado" role="status" aria-live="polite"></p>
+            <button id="proxima" class="acao" type="button" hidden>Próxima 💕</button>
+        </section>
+        <section id="premio" aria-labelledby="titulo-final" hidden>
+            <h2 id="titulo-final" tabindex="-1"></h2>
+            <p id="pontuacao"></p>
+            <p id="mensagem-final"></p>
+            <button id="abrir-surpresa" class="acao" type="button" hidden>Ir para a surpresa 💌</button>
+            <div id="surpresa" hidden>
+                <p>Sua surpresa está no nosso site especial! ❤️</p>
+                <!-- COLE O LINK DO SITE PRINCIPAL no href abaixo, substituindo SEU_LINK_AQUI. -->
+                <a id="link-site-principal" href="SEU_LINK_AQUI">Abrir o site principal 💕</a>
+            </div>
+            <button id="reiniciar" class="acao" type="button">Tentar novamente ❤️</button>
+        </section>
+        <noscript>Ative o JavaScript no navegador para jogar este quiz.</noscript>
+    </main>
+</body>
+</html>

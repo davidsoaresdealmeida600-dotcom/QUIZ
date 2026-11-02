@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: #2b1323;
+
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* As fotos permanecem intactas; aqui elas viram uma colagem suave ao fundo. */
+.memorias {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(255, 181, 211, 0.55), transparent 30%),
+        radial-gradient(circle at 88% 82%, rgba(177, 123, 205, 0.45), transparent 33%),
+        linear-gradient(135deg, #351324, #6b254d 55%, #2b183c);
+}
+
+.memorias::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, rgba(35, 9, 25, 0.72), rgba(78, 23, 57, 0.50));
+    backdrop-filter: blur(2px);
+}
+
+.foto {
+    position: absolute;
+    width: clamp(150px, 16vw, 230px);
+    aspect-ratio: 3 / 4;
+    border: 8px solid rgba(255, 255, 255, 0.72);
+    border-radius: 8px;
+    box-shadow: 0 18px 42px rgba(18, 2, 12, 0.48);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.68;
+}
+
+.foto-1 {
+    top: 3%;
+    left: 3%;
+    transform: rotate(-12deg);
+    background-image: url("assets/nosso-momento-1.jpg");
+}
+
+.foto-2 {
+    right: 3%;
+    bottom: 3%;
+    transform: rotate(11deg);
+    background-image: url("assets/nosso-momento-2.jpg");
+}
+
+.foto-flor {
+    width: clamp(120px, 13vw, 185px);
+    top: 10%;
+    right: 4%;
+    transform: rotate(8deg);
+    background-image: url("assets/flor-de-ursinho.jpg");
+    opacity: 0.48;
+}
+
+.foto-3 {
+    left: 8%;
+    bottom: 3%;
+    transform: rotate(9deg);
+    background-image: url("assets/nosso-momento-3.jpg");
+    opacity: 0.48;
+}
+
+.foto-4 {
+    left: 38%;
+    top: 2%;
+    right: auto;
+    transform: rotate(-7deg);
+    background-image: url("assets/nosso-momento-4.jpg");
+    opacity: 0.46;
+}
+
+.foto-5 {
+    width: clamp(130px, 14vw, 205px);
+    left: 43%;
+    right: auto;
+    top: auto;
+    bottom: 5%;
+    transform: rotate(-10deg);
+    background-image: url("assets/nosso-momento-5.jpg");
+    opacity: 0.43;
+}
+
+.quiz {
+    width: 100%;
+    max-width: 500px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(30, 3, 20, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.66);
+    backdrop-filter: blur(9px);
+}
+
+@media (max-width: 620px) {
+    .foto-1 {
+        width: 120px;
+        left: 3%;
+        top: 2%;
+    }
+
+    .foto-2 {
+        width: 125px;
+        right: 2%;
+        bottom: 2%;
+    }
+
+    .foto-flor {
+        width: 100px;
+        right: 2%;
+        top: 5%;
+    }
+
+    .foto-3 {
+        width: 120px;
+        left: 3%;
+        bottom: 2%;
+    }
+
+    .foto-4 {
+        width: 105px;
+        left: 38%;
+        top: 2%;
+    }
+
+    .foto-5 {
+        width: 85px;
+        left: 40%;
+        bottom: 2%;
+    }
+
+    .quiz {
+        padding: 24px 18px;
+    }
+}
+
+h1 {
+    color: #e91e63;
+
+    margin-bottom: 15px;
+}
+
+#progresso {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+#pergunta {
+    margin-bottom: 25px;
+
+    color: #333;
+}
+
+#respostas {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+#respostas button,
+#proxima,
+#premio button {
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+#respostas button {
+    background: #ffe4ec;
+}
+
+#respostas button:hover {
+    background: #f8b6c9;
+
+    transform: scale(1.02);
+}
+
+#proxima {
+    margin-top: 25px;
+
+    background: #e91e63;
+
+    color: white;
+}
+
+#resultado {
+    margin-top: 20px;
+
+    font-weight: bold;
+}
+
+#premio {
+    display: none;
+}
+
+#premio h2 {
+    color: #e91e63;
+
+    margin-bottom: 15px;
+}
+
+#premio p {
+    margin-bottom: 15px;
+}
+
+#premio a {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    background: #e91e63;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+#premio a:hover {
+    background: #c2185b;
+}
+
+/* Telas e controles do quiz */
+[hidden] { display: none !important; }
+body { isolation: isolate; }
+.quiz { position: relative; }
+section > p { line-height: 1.6; margin-bottom: 16px; }
+section > h2 { margin-bottom: 18px; color: #54243b; }
+.etiqueta { color: #8b3858; font-size: 14px; }
+.acao, #premio button {
+    border: 0;
+    border-radius: 12px;
+    padding: 15px 22px;
+    margin-top: 18px;
+    background: #b91c50;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+#proxima { background: #b91c50; }
+progress { width: 100%; height: 10px; accent-color: #b91c50; margin-bottom: 24px; }
+#progresso { margin-bottom: 10px; color: #62505a; }
+#respostas button { color: #422231; min-height: 48px; }
+#respostas button:disabled { cursor: default; opacity: 1; }
+#respostas button:disabled:hover { transform: none; }
+#respostas button.correta { background: #d9f3df; color: #18552b; box-shadow: inset 0 0 0 2px #288242; }
+#respostas button.incorreta { background: #ffe1e1; color: #8a2424; box-shadow: inset 0 0 0 2px #bb4545; }
+#premio:not([hidden]) { display: block; }
+#surpresa { margin-top: 24px; padding: 20px; background: #ffe4ec; border-radius: 16px; line-height: 1.7; }
+#surpresa h3 { margin-bottom: 12px; color: #8d2146; }
+button:focus-visible { outline: 3px solid #713b90; outline-offset: 4px; }
+.acao:hover { background: #981540; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+}

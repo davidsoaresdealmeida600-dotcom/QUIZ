@@ -68,7 +68,7 @@
     {
         pergunta: "Quais meus cantores favoritos?",
         respostas: [
-            "Mano Walter, Hungria, Japãozinho",
+            "Mano Walter, Hungria, Wesley Safadão",
             "Japãozinho, Felipe Amorim, Hungria",
             "Gusttavo Lima, Hungria, Luan Santana",
             "Hungria, Felipe Amorim, Mano Walter"
